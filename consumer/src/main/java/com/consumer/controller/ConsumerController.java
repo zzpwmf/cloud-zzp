@@ -1,12 +1,18 @@
 package com.consumer.controller;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
+/**
+ * 消费端
+ * @author zzp
+ */
+@Slf4j
 @RestController
-//@RequestMapping("/consumer")
+@RequestMapping("/consumerCon")
 public class ConsumerController {
 
     @Autowired
@@ -14,7 +20,8 @@ public class ConsumerController {
 
     @RequestMapping("/testConsumer")
     public String consumerTest() {
-        return restTemplate.getForEntity("localhost:8080/provider/hello", String.class).getBody();
+        log.info("testConsumer start");
+        return restTemplate.getForEntity("http://localhost:8080/provider/hello", String.class).getBody();
     }
 
 }
