@@ -1,6 +1,7 @@
 package com.feign.controller;
 
 import com.feign.service.IInvokeProvider;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -9,8 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
  * feign测试
  * @author
  */
+@Slf4j
 @RestController
-@RequestMapping("/feignController")
 public class FeignController {
 
     @Autowired
@@ -22,6 +23,7 @@ public class FeignController {
      */
     @RequestMapping("/hello")
     public String testProvider() {
+        log.info("invoke feign server");
         return iInvokeProvider.testRest();
     }
 

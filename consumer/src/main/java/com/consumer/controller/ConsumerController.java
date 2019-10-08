@@ -21,7 +21,7 @@ public class ConsumerController {
     @RequestMapping("/testConsumer")
     public String consumerTest() {
         log.info("testConsumer start");
-        return restTemplate.getForEntity("http://provider-zzp/provider/hello", String.class).getBody();
+        return restTemplate.getForObject("http://provider-zzp/provider/hello", String.class);
     }
 
 }

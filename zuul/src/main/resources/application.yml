@@ -1,0 +1,8 @@
+zuul:
+  routes:
+    feign:
+      path: /feign/**
+      serviceId: feign
+    consumer-zzp:
+      path: /consumer-zzp/**
+      serviceId: consumer-zzp

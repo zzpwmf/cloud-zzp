@@ -3,35 +3,24 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.1.8.RELEASE</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <groupId>com</groupId>
+        <artifactId>cloud-zzp</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
     </parent>
     <groupId>com</groupId>
-    <artifactId>cloud-zzp</artifactId>
+    <artifactId>zuul</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>cloud-zzp</name>
+    <name>zuul</name>
     <description>Demo project for Spring Boot</description>
-    <packaging>pom</packaging>
-
-    <modules>
-        <module>provider</module>
-        <module>consumer</module>
-        <module>eureka-server</module>
-        <module>feign</module>
-        <module>zuul</module>
-    </modules>
 
     <properties>
         <java.version>1.8</java.version>
-
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
         <dependency>
@@ -39,10 +28,16 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
         <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <optional>true</optional>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+            <version>2.1.2.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-zuul</artifactId>
+            <version>2.1.2.RELEASE</version>
         </dependency>
     </dependencies>
 
